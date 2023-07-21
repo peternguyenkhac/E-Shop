@@ -1,0 +1,61 @@
+﻿@model EShop.Models.ViewModels.SliderViewModel
+
+<!-- ========================= SECTION MAIN  ========================= -->
+<section class="section-main padding-y">
+	<main class="card rounded">
+		<div class="card-body">
+
+			<div class="row">
+				<aside class="col-lg-3 col-md-3">
+					<nav class="nav-home-aside">
+						<h6 class="title-category">
+							E-Shop <i class="d-md-none icon fa fa-chevron-down"></i>
+						</h6>
+						<ul class="menu-category">
+							@foreach (var item in Model.categories)
+							{
+								<li><a asp-controller="Catalog" asp-action="GetProductsByCategory" asp-route-categoryId="@item.Id">@item.Name</a></li>
+							}
+						</ul>
+					</nav>
+				</aside> <!-- col.// -->
+
+				<div class="col-md-9 col-xl-9 col-lg-9">
+
+					<!-- ================== COMPONENT SLIDER  BOOTSTRAP  ==================  -->
+					<div id="carousel1_indicator" class="slider-home-banner carousel slide"
+						 data-ride="carousel">
+						<ol class="carousel-indicators">
+							@for(int i = 0; i < Model.slider.Count; i++)
+							{
+								<li data-target="#carousel1_indicator" data-slide-to="@i" class="@(i == 0 ? "active" : "")"></li>
+							}
+						</ol>
+						<div class="carousel-inner rounded">
+							@foreach(var item in Model.slider)
+							{
+								<a class="carousel-item @(item == Model.slider.First() ? "active" : "")" href="@item.Url">
+									<img src="@item.Image" alt="@item.Name">
+								</a>
+							}
+						</div>
+						<a class="carousel-control-prev" href="#carousel1_indicator" role="button"
+						   data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#carousel1_indicator" role="button"
+						   data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
+					<!-- ==================  COMPONENT SLIDER BOOTSTRAP end.// ==================  .// -->
+
+				</div> <!-- col.// -->
+			</div> <!-- row.// -->
+
+		</div> <!-- card-body.// -->
+	</main> <!-- card.// -->
+
+</section>

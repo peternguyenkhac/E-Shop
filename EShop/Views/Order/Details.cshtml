@@ -1,0 +1,76 @@
+﻿@model EShop.Models.Order
+@{
+	Layout = "_ProfileLayout";
+}
+<article class="card mb-4">
+	<header class="card-header">
+		<a href="#" class="float-right"> <i class="fa fa-print"></i> Print</a>
+		<strong class="d-inline-block mr-3">ID: @Model.Id</strong>
+	</header>
+	<div class="card-body">
+		<div class="row">
+			<div class="col-md-8">
+				<h6 class="text-muted">Thông tin đơn hàng</h6>
+				<p>
+					SĐT: @Model.Phone <br>
+					Email: @Model.Email <br>
+					Địa chỉ: @Model.Address <br>
+					Ngày: @Model.CreatedDate
+				</p>
+			</div>
+			<div class="col-md-4">
+				<h6 class="text-muted">Trạng thái đơn hàng</h6>
+				@switch (Model.Status)
+				{
+					case 0:
+						<span class="text-danger">
+							Đã huỷ
+						</span>
+						break;
+					case 1:
+						<span class="text-warning">
+							Chưa thanh toán
+						</span>
+						break;
+					case 2:
+						<span class="text-primary">
+							Đã thanh toán
+						</span>
+						break;
+					case 3:
+						<span class="text-success">
+							Đã giao
+						</span>
+						break;
+					default:
+						<p>Không xác định</p>
+						break;
+				}
+				<p>
+					<span class="b">Tổng:  @Model.Total VND </span>
+				</p>
+			</div>
+		</div> <!-- row.// -->
+	</div> <!-- card-body .// -->
+	<div class="table-responsive">
+		<table class="table table-hover">
+			<tbody>
+				@foreach(var item in Model.OrderItems)
+				{
+					<tr>
+						<td width="65">
+							<img src="@item.Product.Image" class="img-xs border">
+						</td>
+						<td>
+							<p class="title mb-0">@item.Product.Name</p>
+							<var class="price text-muted">SL: @item.Quantity</var>
+						</td>
+						<td width="250">
+							<span class="b">@Model.Total VND </span>
+						</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div> <!-- table-responsive .end// -->
+</article> <!-- card order-item .// -->

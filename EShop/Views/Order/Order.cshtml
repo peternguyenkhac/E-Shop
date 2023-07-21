@@ -1,0 +1,60 @@
+﻿@model EShop.Models.ViewModels.PaginatedList<Order>
+@{
+    Layout = "_ProfileLayout";
+}
+
+<article class="card mb-4">
+    <div class="card-body">
+        @foreach (var item in Model)
+        {
+            <div class="row">
+                <div class="col-md-8">
+                    <h6 class="text-muted">Thông tin</h6>
+                    <p>
+                        SĐT: @item.Phone Email: @item.Email <br>
+                        Địa chỉ: @item.Address <br>
+                        Ngày: @item.CreatedDate
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="text-muted">Tình trạng đơn hàng</h6>
+
+                    @switch (item.Status)
+                    {
+                        case 0:
+                            <span class="text-danger">
+                                Đã huỷ
+                            </span>
+                            break;
+                        case 1:
+                            <span class="text-warning">
+                                Chưa thanh toán
+                            </span>
+                            break;
+                        case 2:
+                            <span class="text-primary">
+                                Đã thanh toán
+                            </span>
+                            break;
+                        case 3:
+                            <span class="text-success">
+                                Đã giao
+                            </span>
+                            break;
+                        default:
+                            <p>Không xác định</p>
+                            break;
+                    }
+                    <p>
+                        <span class="b">Tổng:  @item.Total VND </span>
+                    </p>
+                </div>
+            </div> <!-- row.// -->
+            <hr />
+        }
+    </div> <!-- card-body .// -->
+    @{
+        await Html.RenderPartialAsync("_OrderPagination", Model);
+    }
+
+</article> <!-- card order-item .// -->

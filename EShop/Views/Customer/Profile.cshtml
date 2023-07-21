@@ -1,0 +1,50 @@
+﻿@model EShop.Models.User
+
+@{
+    Layout = "_ProfileLayout";
+}
+
+
+<div class="card">
+    <div class="card-body">
+        <form class="row" asp-action="EditProfile" method="post">
+            <div class="col-md-9">
+                <div class="form-row">
+                    <div class="col form-group">
+                        <label>Name</label>
+                        <input type="text" asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div> <!-- form-group end.// -->
+                    <div class="col form-group">
+                        <label>Phone</label>
+                        <input asp-for="Phone" type="tel" class="form-control" placeholder="">
+                        <span asp-validation-for="Phone" class="text-danger"></span>
+                    </div> <!-- form-group end.// -->
+                </div> <!-- form-row end.// -->
+                <div class="form-group">
+                    <label>Email</label>
+                    <input asp-for="Email" type="email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div> <!-- form-group end.// -->
+                <div class="form-group">
+                    <label>Address</label>
+                    <input asp-for="Address" type="text" class="form-control">
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div> <!-- form-row.// -->
+
+                <button class="btn btn-primary" type="submit">Save</button>
+
+                <br><br><br><br><br><br>
+
+            </div> <!-- col.// -->
+        </form>
+    </div> <!-- card-body.// -->
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

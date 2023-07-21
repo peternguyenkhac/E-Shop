@@ -1,0 +1,28 @@
+﻿@using SlugGenerator;
+@model IEnumerable<EShop.Models.Product>
+
+<!-- =============== SECTION ITEMS =============== -->
+<section class="padding-bottom">
+	<header class="section-heading mb-4">
+		<h3 class="title-section">Recommended items</h3>
+	</header>
+
+	<div class="row">
+		@foreach(var item in Model)
+		{
+			<div class="col-xl-3 col-lg-3 col-md-4 col-6">
+				<div class="card card-product-grid rounded">
+					<a asp-controller="Product" asp-action="Details" asp-route-id="@item.Id" asp-route-slug="@item.Name.GenerateSlug()" class="img-wrap"> <img src="@item.Image"> </a>
+					<figcaption class="info-wrap">
+						<div>
+							<a href="#" class="text-muted">@item.Category.Name</a>
+							<a href="#" class="title">@item.Name</a>
+						</div>
+						<div class="price h5 mt-2">$@item.Price</div> <!-- price.// -->
+						<button href="#" class="btn btn-block btn-outline-primary" onclick="AddToCart(@item.Id, 1)"> <i class="fa fa-shopping-cart"></i> ADD TO CART </button>
+					</figcaption>
+				</div>
+			</div> <!-- col.// -->
+		}
+	</div> <!-- row.// -->
+</section>

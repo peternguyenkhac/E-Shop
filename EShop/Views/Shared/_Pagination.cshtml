@@ -1,0 +1,67 @@
+﻿@model EShop.Models.ViewModels.ProductPagingFilteringViewModel
+
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+    bool prevSkip = false;
+    bool nextSkip = false;
+}
+
+<nav class="mb-4 d-flex justify-content-center" aria-label="Page navigation sample">
+    <ul class="pagination">
+        <li class="page-item @prevDisabled">
+            <a class="page-link"
+               asp-action="@Model.Action"
+               asp-route-searchString="@Model.SearchString"
+               asp-route-categoryId="@Model.CategoryId"
+               asp-route-sortOrder="@Model.SortOrder"
+               asp-route-pageIndex="@(Model.PageIndex - 1)">Previous</a>
+        </li>
+
+        @for(int i = 1; i <= Model.TotalPages; i++)
+        {
+            @if(i == Model.PageIndex)
+            {
+                <li class="page-item active">
+                    <a class="page-link" href="#">@i</a></li>
+            }
+            else if(i == 1 || i == Model.TotalPages || (i >= (Model.PageIndex - 1) && i <= (Model.PageIndex + 1)))
+            {
+                <li class="page-item">
+                    <a class="page-link"
+                       asp-action="@Model.Action"
+                       asp-route-searchString="@Model.SearchString"
+                       asp-route-categoryId="@Model.CategoryId"
+                       asp-route-sortOrder="@Model.SortOrder"
+                       asp-route-pageIndex="@i">@i</a>
+                </li>
+            }
+            else
+            {
+                @if(i < Model.PageIndex && !prevSkip)
+                {
+                    <li class="page-item disabled">
+                        <a class="page-link">...</a>
+                    </li>
+                    prevSkip = true;
+                }
+                @if (i > Model.PageIndex && !nextSkip)
+                {
+                    <li class="page-item disabled">
+                        <a class="page-link">...</a>
+                    </li>
+                    nextSkip = true;
+                }
+            }
+        }
+
+        <li class="page-item @nextDisabled">
+            <a class="page-link"
+               asp-action="@Model.Action"
+               asp-route-searchString="@Model.SearchString"
+               asp-route-categoryId ="@Model.CategoryId"
+               asp-route-sortOrder="@Model.SortOrder"
+               asp-route-pageIndex="@(Model.PageIndex + 1)">Next</a>
+        </li>
+    </ul>
+</nav>

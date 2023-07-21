@@ -1,0 +1,20 @@
+﻿@{
+    Layout = "_Layout";
+    string NavClass(ViewContext viewContext, string page) => viewContext.RouteData.Values["Action"].Equals(page) ? "active" : null;
+}
+
+<div class="row">
+    <aside class="col-md-3">
+        <nav class="list-group">
+            <a class="list-group-item @NavClass(ViewContext, "Profile")" asp-controller="Customer" asp-action="Profile"> Thông tin tài khoản </a>
+            <a class="list-group-item @NavClass(ViewContext, "ChangePassword")" asp-controller="Customer" asp-action="ChangePassword"> Đổi mật khẩu </a>
+            <a class="list-group-item @NavClass(ViewContext, "Order")" asp-controller="Order" asp-action="Order"> Đơn hàng </a>
+            <a class="list-group-item" asp-controller="Customer" asp-action="Logout"> Đăng xuất </a>
+        </nav>
+    </aside> <!-- col.// -->
+    <main class="col-md-9">
+        @RenderBody()
+    </main> <!-- col.// -->
+</div>
+@await RenderSectionAsync("Scripts", required: false)
+

@@ -1,0 +1,21 @@
+﻿@model IEnumerable<EShop.Models.Banner>
+
+<!-- ========================= SECTION BANNER ========================= -->
+
+<section class="padding-bottom">
+	<div class="row">
+		@foreach(var item in Model)
+		{
+			<a class="col-md-4" href="#">
+				<div class="card-banner rounded">
+					<div class="card-body"
+						 style="height:250px; background-image: url('@item.Image');">
+					</div>
+					<div class="text-bottom">
+						<h5 class="title">@item.Name</h5>
+					</div>
+				</div>
+			</a>
+		}
+	</div> <!-- row.// -->
+</section>

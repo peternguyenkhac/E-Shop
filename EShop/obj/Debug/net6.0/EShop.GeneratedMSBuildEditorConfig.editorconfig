@@ -1,0 +1,137 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = EShop
+build_property.RootNamespace = EShop
+build_property.ProjectDir = E:\6. Thực hành\Web Development\8. ASP.NET\EShop\EShop\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = E:\6. Thực hành\Web Development\8. ASP.NET\EShop\EShop
+build_property._RazorSourceGeneratorDebug = 
+
+[E:/6. Thực hành/Web Development/8. ASP.NET/EShop/EShop/Areas/Admin/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/6. Thực hành/Web Development/8. ASP.NET/EShop/EShop/Areas/Admin/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/6. Thực hành/Web Development/8. ASP.NET/EShop/EShop/Views/Cart/Cart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxDYXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/6. Thực hành/Web Development/8. ASP.NET/EShop/EShop/Views/Catalog/GetAllProducts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0YWxvZ1xHZXRBbGxQcm9kdWN0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/6. Thực hành/Web Development/8. ASP.NET/EShop/EShop/Views/Catalog/GetProductsByCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0YWxvZ1xHZXRQcm9kdWN0c0J5Q2F0ZWdvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/6. Thực hành/Web Development/8. ASP.NET/EShop/EShop/Views/Checkout/Checkout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tvdXRcQ2hlY2tvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/6. Thực hành/Web Development/8. ASP.NET/EShop/EShop/Views/Checkout/Complete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tvdXRcQ29tcGxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/6. Thực hành/Web Development/8. ASP.NET/EShop/EShop/Views/Customer/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/6. Thực hành/Web Development/8. ASP.NET/EShop/EShop/Views/Customer/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/6. Thực hành/Web Development/8. ASP.NET/EShop/EShop/Views/Customer/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcUHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/6. Thực hành/Web Development/8. ASP.NET/EShop/EShop/Views/Customer/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcUmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/6. Thực hành/Web Development/8. ASP.NET/EShop/EShop/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/6. Thực hành/Web Development/8. ASP.NET/EShop/EShop/Views/Order/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/6. Thực hành/Web Development/8. ASP.NET/EShop/EShop/Views/Order/Order.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcT3JkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/6. Thực hành/Web Development/8. ASP.NET/EShop/EShop/Views/Product/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/6. Thực hành/Web Development/8. ASP.NET/EShop/EShop/Views/Shared/Components/Banner/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQmFubmVyXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/6. Thực hành/Web Development/8. ASP.NET/EShop/EShop/Views/Shared/Components/Navigation/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTmF2aWdhdGlvblxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/6. Thực hành/Web Development/8. ASP.NET/EShop/EShop/Views/Shared/Components/NewProducts/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTmV3UHJvZHVjdHNcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/6. Thực hành/Web Development/8. ASP.NET/EShop/EShop/Views/Shared/Components/Slider/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU2xpZGVyXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/6. Thực hành/Web Development/8. ASP.NET/EShop/EShop/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/6. Thực hành/Web Development/8. ASP.NET/EShop/EShop/Views/Shared/_Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/6. Thực hành/Web Development/8. ASP.NET/EShop/EShop/Views/Shared/_OrderPagination.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9PcmRlclBhZ2luYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/6. Thực hành/Web Development/8. ASP.NET/EShop/EShop/Views/Shared/_Pagination.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYWdpbmF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/6. Thực hành/Web Development/8. ASP.NET/EShop/EShop/Views/Shared/_ProductFilter.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Qcm9kdWN0RmlsdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/6. Thực hành/Web Development/8. ASP.NET/EShop/EShop/Views/Shared/_ProfileLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Qcm9maWxlTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/6. Thực hành/Web Development/8. ASP.NET/EShop/EShop/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/6. Thực hành/Web Development/8. ASP.NET/EShop/EShop/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/6. Thực hành/Web Development/8. ASP.NET/EShop/EShop/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/6. Thực hành/Web Development/8. ASP.NET/EShop/EShop/Areas/Admin/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-elgbd227c0
+
+[E:/6. Thực hành/Web Development/8. ASP.NET/EShop/EShop/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-n2f8fohmce

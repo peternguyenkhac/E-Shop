@@ -1,0 +1,33 @@
+﻿@using System.Security.Claims;
+
+<div class="widget-header mr-3 dropdown no-arrow">
+    @if (User.Identity.IsAuthenticated)
+    {
+        <a href="#" class="widget-view" id="dropdownMenuLink"
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="icon-area">
+                <i class="fa fa-user"></i>
+            </div>
+            <small class="text"> @User.FindFirstValue(ClaimTypes.Name) </small>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" asp-controller="Customer" asp-action="Profile">
+                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                Profile
+            </a>
+            <a class="dropdown-item" asp-controller="Customer" asp-action="Logout">
+                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                Đăng xuất
+            </a>
+        </div>
+    }
+    else
+    {
+        <a asp-controller="Customer" asp-action="Login" class="widget-view">
+            <div class="icon-area">
+                <i class="fa fa-user"></i>
+            </div>
+            <small class="text"> Login </small>
+        </a>
+    }
+</div>

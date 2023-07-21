@@ -1,0 +1,36 @@
+﻿@model EShop.ViewModels.LoginViewModel
+
+
+<div class="card mx-auto" style="max-width: 380px; margin-top:50px;">
+    <div class="card-body">
+        <h4 class="card-title mb-4">Sign in</h4>
+        <form asp-action="Login" method="post">
+            <div class="form-group">
+                <input asp-for="UserEmail" placeholder="Username" class="form-control" />
+                <span asp-validation-for="UserEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="Password" type="password" placeholder="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                </div> <!-- form-group end.// -->
+            </div> <!-- form-row end.// -->
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block"> Login  </button>
+            </div> <!-- form-group// -->
+        </form>
+    </div> <!-- card-body.// -->
+</div> <!-- card .// -->
+
+<p class="text-center mt-4">Don't have account? <a asp-action="Register">Sign up</a></p>
+<br>
+<br>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

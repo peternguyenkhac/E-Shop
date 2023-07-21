@@ -1,0 +1,52 @@
+﻿@using EShop.Models.ViewModels
+@using SlugGenerator;
+@model EShop.Models.ViewModels.PaginatedList<Product>
+
+@{
+    var productFilter = new ProductPagingFilteringViewModel
+            {
+                SearchString = ViewBag.SearchString,
+                SortOrder = ViewBag.SortOrder,
+                PageIndex = Model.PageIndex,
+                TotalPages = Model.TotalPages,
+                Action = "GetAllProducts"
+            };
+}
+
+<!-- ============================  FILTER TOP  ================================= -->
+<div class="card mb-3 rounded">
+    <div class="card-body">
+        <ol class="breadcrumb float-left">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Tất cả sản phẩm</a></li>
+        </ol>
+    </div>
+</div> <!-- card.// -->
+<!-- ============================ FILTER TOP END.// ================================= -->
+
+<header class="mb-3">
+    <div class="form-inline">
+        <strong class="mr-md-auto">@Model.Count Sản phẩm</strong>
+        @await Html.PartialAsync("_ProductFilter", productFilter)
+    </div>
+</header><!-- sect-heading -->
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-xl-3 col-lg-3 col-md-4 col-6">
+            <div class="card card-product-grid rounded">
+                <a asp-controller="Product" asp-action="Details" asp-route-id="@item.Id" asp-route-slug="@item.Name.GenerateSlug()" class="img-wrap"> <img src="@item.Image"> </a>
+                <figcaption class="info-wrap">
+                    <div>
+                        <a href="#" class="text-muted">@item.Category.Name</a>
+                        <a href="#" class="title">@item.Name</a>
+                    </div>
+                    <div class="price h5 mt-2">$@item.Price</div> <!-- price.// -->
+                    <button href="#" class="btn btn-block btn-outline-primary" onclick="AddToCart(@item.Id, 1)"> <i class="fa fa-shopping-cart"></i> ADD TO CART </button>
+                </figcaption>
+            </div>
+        </div> <!-- col.// -->
+    }
+</div> <!-- row.// -->
+@await Html.PartialAsync("_Pagination", productFilter)

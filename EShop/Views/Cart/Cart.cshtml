@@ -1,0 +1,78 @@
+﻿@using SlugGenerator;
+@model EShop.Models.Cart
+
+<div class="row">
+    <main class="col-md-9">
+        <div class="card rounded">
+
+            <table id="CartTable" class="table table-borderless table-shopping-cart">
+                <thead class="text-muted">
+                    <tr class="small text-uppercase">
+                        <th scope="col">Product</th>
+                        <th scope="col" width="150">Đơn giá</th>
+                        <th class="text-center" scope="col" width="150">Quantity</th>
+                        <th scope="col" width="150">Thành tiền</th>
+                        <th scope="col" class="text-right" width="120"> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var item in Model.CartItems)
+                    {
+                        <tr id="@item.Product.Id">
+                            <td>
+                                <figure class="itemside">
+                                    <div class="aside"><img src="@item.Product.Image" class="img-sm"></div>
+                                    <figcaption class="info">
+                                        <a asp-controller="Product" asp-action="Details" asp-route-id="@item.Product.Id" asp-route-slug="@item.Product.Name.GenerateSlug()" class="title text-dark">@item.Product.Name</a>
+                                    </figcaption>
+                                </figure>
+                            </td>
+                            <td>
+                                <div class="price-wrap origin-price">
+                                    <var class="price"> @item.Product.Price VND</var>
+                                </div> <!-- price-wrap .// -->
+                            </td>
+                            <td>
+                                <input type="number" class="form-control" value="@item.Quantity" min="1" max="99" onchange="UpdateCartItem(@item.Product.Id, this.value)">
+                            </td>
+                            <td>
+                                <div class="price-wrap">
+                                    <var class="price sub-price">
+                                        @{
+                                            var price = item.Product.Price * (item.Quantity);
+                                            @price
+                                        }
+                                        VND</var>
+                                </div> <!-- price-wrap .// -->
+                            </td>
+                            <td class="text-right">
+                                <button class="btn btn-light" onclick="RemoveCartItem(@item.Product.Id)"> Remove</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <div class="card-body border-top">
+                <a asp-controller="Catalog" asp-action="GetAllProducts" class="btn btn-light"> <i class="fa fa-chevron-left"></i> Tiếp tục mua hàng </a>
+            </div>
+        </div> <!-- card.// -->
+
+
+    </main> <!-- col.// -->
+    <aside class="col-md-3">
+        <div class="card rounded">
+            <div class="card-body">
+                <dl class="dlist-align">
+                    <dt>Tổng tiền</dt>
+                    <dd class="text-right  h5"><strong id="sub-total">VND</strong></dd>
+                </dl>
+
+                <hr>
+                <a asp-controller="Checkout" asp-action="Checkout" class="btn btn-block btn-primary">
+                    Tiến hành đặt hàng <i class="fa fa-chevron-right"></i>
+                </a>
+            </div> <!-- card-body.// -->
+        </div> <!-- card .// -->
+    </aside> <!-- col.// -->
+</div>

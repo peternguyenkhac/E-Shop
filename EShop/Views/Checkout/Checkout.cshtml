@@ -1,0 +1,81 @@
+﻿@model EShop.ViewModels.CheckoutViewModel
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card rounded">
+            <form class="card-body" asp-action="Confirm" method="post">
+                <h4 class="card-title mb-3">Thông tin thanh toán</h4>
+
+                <div class="form-row">
+                    <div class="col form-group">
+                        <label>Tên</label>
+                        <input type="text" asp-for="User.Name" class="form-control" placeholder="">
+                    </div> <!-- form-group end.// -->
+                    <div class="col form-group">
+                        <label>Số điện thoại</label>
+                        <input type="tel" asp-for="User.Phone" class="form-control" placeholder="">
+                    </div> <!-- form-group end.// -->
+                </div> <!-- form-row end.// -->
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" asp-for="User.Email" class="form-control" placeholder="">
+                </div> <!-- form-group// -->
+                <div class="form-group">
+                    <label>Adress</label>
+                    <input type="text" asp-for="User.Address" class="form-control" placeholder="">
+                </div> <!-- form-group// -->
+
+                <div class="form-row">
+                    <div class="form-group col-sm-6 ">
+                        <label class="js-check box active rounded">
+                            <input type="radio" name="paymentMethod" value="default" checked="">
+                            <h6 class="title">Thanh toán khi nhận hàng</h6>
+                        </label> <!-- js-check.// -->
+                    </div>
+                    <div class="form-group col-sm-6 ">
+                        <label class="js-check box rounded">
+                            <input type="radio" name="paymentMethod" value="vnpay">
+                            <h6 class="title">Thanh toán qua VNPay</h6>
+                        </label> <!-- js-check.// -->
+                    </div>
+                </div>
+                <hr>
+                <a href="#" class="btn btn-light"> Cancel </a>
+                <button type="submit" class="btn btn-primary float-md-right">
+                    Đặt hàng <i class="fa fa-chevron-right"></i>
+                </button>
+            </form> <!-- card-body.// -->
+        </div> <!-- card .// -->
+    </div>
+    <div class="col-md-4">
+        <div class="card rounded">
+            <div class="card-body">
+                <dl class="dlist-align">
+                    <dt>Tổng tiền</dt>
+                    <dd class="text-right  h5"><strong>@Model.Total VND</strong></dd>
+                </dl>
+                <hr>
+
+                <h6 class="text-dark my-4"> Sản phẩm </h6>
+
+                @foreach (var item in Model.Cart.CartItems)
+                {
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="mr-3 position-relative">
+                            <img src="@item.Product.Image"
+                                 class="img-sm rounded border">
+                        </div>
+                        <figcaption class="info">
+                            <a href="#" class="title text-dark">@item.Product.Name</a>
+                            <p class="text-muted mb-0">Quantity: @item.Quantity</p>
+                            <var class="price text-muted">@item.Product.Price VND</var>
+                        </figcaption>
+                    </div> <!-- card-body.// -->
+                }
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+
+</div> <!-- container .//  -->

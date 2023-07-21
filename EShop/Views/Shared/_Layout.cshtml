@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Shop</title>
+    <link href="~/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <!-- jQuery -->
+    <script src="~/js/jquery-2.0.0.min.js" type="text/javascript"></script>
+
+    <!-- Bootstrap4 files-->
+    <script src="~/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+    <link href="~/css/bootstrap.css" rel="stylesheet" type="text/css" />
+
+    <!-- Font awesome 5 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" type="text/css" rel="stylesheet">
+
+    <!-- custom style -->
+    <link href="~/css/ui.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/responsive.css" rel="stylesheet" type="text/css" />
+
+    <!-- custom script-->
+    <script src="~/js/script.js" type="text/javascript"></script>
+
+</head>
+<body>
+    <header class="section-header">
+        <section class="header-main border-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-2 col-lg-3 col-md-12">
+                        <a href="/" class="brand-wrap">
+                            <img class="logo" src="~/images/logo.svg">
+                        </a> <!-- brand-wrap.// -->
+                    </div>
+                    <div class="col-xl-6 col-lg-5 col-md-6">
+                        <form asp-controller="Catalog" asp-action="GetAllProducts" method="get" class="search-header">
+                            <div class="input-group w-100">
+                                <input type="text" class="form-control" placeholder="Search" name="searchString" id="searchString" value="@ViewBag.searchString">
+
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="submit">
+                                        <i class="fa fa-search"></i> Search
+                                    </button>
+                                </div>
+                            </div>
+                        </form> <!-- search-wrap .end// -->
+                    </div> <!-- col.// -->
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="widgets-wrap float-md-right">
+                            @await Html.PartialAsync("_Login")
+                            <div class="widget-header mr-3">
+                                <a asp-controller="Order" asp-action="Order" class="widget-view">
+                                    <div class="icon-area">
+                                        <i class="fa fa-store"></i>
+                                    </div>
+                                    <small class="text"> Orders </small>
+                                </a>
+                            </div>
+                            <div class="widget-header">
+                                <a asp-controller="Cart" asp-action="Cart" class="widget-view">
+                                    <div class="icon-area">
+                                        <i class="fa fa-shopping-cart"></i>
+                                    </div>
+                                    <small class="text"> Cart </small>
+                                </a>
+                            </div>
+                        </div> <!-- widgets-wrap.// -->
+                    </div> <!-- col.// -->
+                </div> <!-- row.// -->
+            </div> <!-- container.// -->
+        </section> <!-- header-main .// -->
+        @await Component.InvokeAsync("Navigation")
+
+    </header> <!-- section-header.// -->
+
+    <section class="section-main padding-y">
+        <div class="container">
+            @RenderBody()
+        </div>
+    </section>
+    <footer class="section-footer bg-secondary">
+        <div class="container">
+
+            <section class="footer-bottom text-center">
+                <p class="text-muted"> &copy 2023 Hai Nguyen </p>
+                <br>
+            </section>
+        </div><!-- //container -->
+    </footer>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/cart.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
