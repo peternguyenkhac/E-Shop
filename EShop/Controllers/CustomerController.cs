@@ -11,13 +11,15 @@ namespace EShop.Controllers
 	public class CustomerController : Controller
 	{
 		private readonly UserService _userService;
+		private readonly CartService _cartService;
 
-		public CustomerController(UserService userService)
-		{
-			_userService = userService;
-		}
+        public CustomerController(UserService userService, CartService cartService)
+        {
+            _userService = userService;
+            _cartService = cartService;
+        }
 
-		public IActionResult Login()
+        public IActionResult Login()
 		{
 			return View();
 		}
@@ -57,11 +59,7 @@ namespace EShop.Controllers
 			if (ModelState.IsValid)
 			{
 
-				if (await _userService.IsEmailExists(model.Email))
-				{
-					ModelState.AddModelError("", "Email này đã được sử dụng");
-					return View();
-				}
+
 
 				var user = new User
 				{
@@ -74,6 +72,8 @@ namespace EShop.Controllers
 				};
 
 				var newUser = await _userService.Add(user);
+
+				await _cartService.Add(newUser.Id);
 
 				return RedirectToAction("Login", "Customer");
 			}

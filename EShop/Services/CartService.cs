@@ -28,6 +28,14 @@ namespace EShop.Services
             return await _cartRepository.GetSingleByCondition(c => c.UserId == userId);
         }
 
+        public async Task<Cart> Add(int userId)
+        {
+            return await _cartRepository.Add(new Cart
+            {
+                UserId = userId
+            });
+        }
+
         public async Task<CartItem> AddToCart(int productId, int cartId, int quantity)
         {
             quantity = Math.Clamp(quantity, 1, 100);

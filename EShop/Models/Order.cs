@@ -7,6 +7,7 @@ namespace EShop.Models
     {
         public Order()
         {
+            Feedbacks = new HashSet<Feedback>();
             OrderItems = new HashSet<OrderItem>();
         }
 
@@ -20,6 +21,7 @@ namespace EShop.Models
         public DateTime CreatedDate { get; set; }
 
         public virtual User? User { get; set; }
+        public virtual ICollection<Feedback> Feedbacks { get; set; }
         public virtual ICollection<OrderItem> OrderItems { get; set; }
     }
 }

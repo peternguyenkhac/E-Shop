@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\6. Thực hành\\Web Development\\8. ASP.NET\\EShop\\EShop\\EShop.csproj": {}
+    "C:\\Users\\Hieu Hieu\\Desktop\\Project_2\\E-Shop\\EShop\\EShop.csproj": {}
   },
   "projects": {
-    "E:\\6. Thực hành\\Web Development\\8. ASP.NET\\EShop\\EShop\\EShop.csproj": {
+    "C:\\Users\\Hieu Hieu\\Desktop\\Project_2\\E-Shop\\EShop\\EShop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\6. Thực hành\\Web Development\\8. ASP.NET\\EShop\\EShop\\EShop.csproj",
+        "projectUniqueName": "C:\\Users\\Hieu Hieu\\Desktop\\Project_2\\E-Shop\\EShop\\EShop.csproj",
         "projectName": "EShop",
-        "projectPath": "E:\\6. Thực hành\\Web Development\\8. ASP.NET\\EShop\\EShop\\EShop.csproj",
-        "packagesPath": "C:\\Users\\Hai Nguyen\\.nuget\\packages\\",
-        "outputPath": "E:\\6. Thực hành\\Web Development\\8. ASP.NET\\EShop\\EShop\\obj\\",
+        "projectPath": "C:\\Users\\Hieu Hieu\\Desktop\\Project_2\\E-Shop\\EShop\\EShop.csproj",
+        "packagesPath": "C:\\Users\\Hieu Hieu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hieu Hieu\\Desktop\\Project_2\\E-Shop\\EShop\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Hai Nguyen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Hieu Hieu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -23,6 +23,7 @@ namespace EShop
             builder.Services.AddScoped<OrderRepository>();
             builder.Services.AddScoped<UserRepository>();
             builder.Services.AddScoped<BannerRepository>();
+            //builder.Services.AddScoped<FeedBackRepository>();
 
             builder.Services.AddScoped<ProductService>();
             builder.Services.AddScoped<CategoryService>();
@@ -30,8 +31,11 @@ namespace EShop
             builder.Services.AddScoped<OrderService>();
             builder.Services.AddScoped<UserService>();
             builder.Services.AddScoped<BannerService>();
+            //builder.Services.AddScoped<FeedBackService>();
 
             builder.Services.AddScoped<VnPayService>();
+            builder.Services.AddScoped<FeedBackService>();
+            builder.Services.AddScoped<FeedBackRepository>();
 
             builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
 			.AddCookie(options =>
