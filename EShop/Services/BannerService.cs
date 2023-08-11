@@ -56,7 +56,7 @@ namespace EShop.Services
 
         public async Task Delete(int id)
         {
-            _bannerRepository.Delete(id);
+            await _bannerRepository.Delete(id);
         }
     }
 }

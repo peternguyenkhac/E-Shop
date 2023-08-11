@@ -8,6 +8,7 @@ namespace EShop.Models
         public User()
         {
             Carts = new HashSet<Cart>();
+            Feedbacks = new HashSet<Feedback>();
             Orders = new HashSet<Order>();
         }
 
@@ -20,6 +21,7 @@ namespace EShop.Models
         public string? Role { get; set; }
 
         public virtual ICollection<Cart> Carts { get; set; }
+        public virtual ICollection<Feedback> Feedbacks { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
     }
 }

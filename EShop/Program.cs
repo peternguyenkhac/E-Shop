@@ -23,15 +23,17 @@ namespace EShop
             builder.Services.AddScoped<OrderRepository>();
             builder.Services.AddScoped<UserRepository>();
             builder.Services.AddScoped<BannerRepository>();
+			builder.Services.AddScoped<FeedbackRepository>();
 
-            builder.Services.AddScoped<ProductService>();
+			builder.Services.AddScoped<ProductService>();
             builder.Services.AddScoped<CategoryService>();
             builder.Services.AddScoped<CartService>();
             builder.Services.AddScoped<OrderService>();
             builder.Services.AddScoped<UserService>();
             builder.Services.AddScoped<BannerService>();
+			builder.Services.AddScoped<FeedbackService>();
 
-            builder.Services.AddScoped<VnPayService>();
+			builder.Services.AddScoped<VnPayService>();
 
             builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
 			.AddCookie(options =>
@@ -67,6 +69,8 @@ namespace EShop
             app.MapControllerRoute(
                   name: "areas",
                   pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
+            app.MapControllers();
 
             app.Run();
         }

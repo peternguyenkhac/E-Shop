@@ -84,8 +84,9 @@ namespace EShop.Services
 
         public async Task<bool> IsEmailExists(string email)
         {
-            var user = _userRepository.GetSingleByCondition(u => u.Email.Equals(email));
-            return user != null? true : false;
+            var query = await _userRepository.GetAll();
+            bool isEmailExists = query.Any(u => u.Email == email);
+            return isEmailExists;
         }
 
         public async Task<User> Add(User user)

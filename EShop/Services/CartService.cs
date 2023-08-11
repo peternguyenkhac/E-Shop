@@ -20,6 +20,13 @@ namespace EShop.Services
         {
             int userId = Int32.Parse(user.FindFirstValue(ClaimTypes.NameIdentifier));
             var cart = await _cartRepository.GetSingleByCondition(c => c.UserId == userId);
+            if(cart == null)
+            {
+                cart = await _cartRepository.Add(new Cart
+                {
+                    UserId = userId
+                });
+            }
             return cart;
         }
 

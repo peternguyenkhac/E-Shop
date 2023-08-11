@@ -24,7 +24,7 @@ namespace EShop.Repositories
             return await _context.Set<Cart>()
                 .Include(c => c.CartItems)
                 .ThenInclude(i => i.Product)
-                .FirstAsync(expression);
+                .SingleOrDefaultAsync(expression);
         }
     }
 }

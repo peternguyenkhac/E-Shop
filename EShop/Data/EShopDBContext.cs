@@ -21,6 +21,7 @@ namespace EShop.Data
         public virtual DbSet<Cart> Carts { get; set; } = null!;
         public virtual DbSet<CartItem> CartItems { get; set; } = null!;
         public virtual DbSet<Category> Categories { get; set; } = null!;
+        public virtual DbSet<Feedback> Feedbacks { get; set; } = null!;
         public virtual DbSet<Order> Orders { get; set; } = null!;
         public virtual DbSet<OrderItem> OrderItems { get; set; } = null!;
         public virtual DbSet<Product> Products { get; set; } = null!;
@@ -91,6 +92,40 @@ namespace EShop.Data
                 entity.Property(e => e.Name).HasMaxLength(50);
             });
 
+            modelBuilder.Entity<Feedback>(entity =>
+            {
+                entity.ToTable("Feedback");
+
+                entity.Property(e => e.CreatedDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("Created_date")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.OrderId).HasColumnName("Order_id");
+
+                entity.Property(e => e.ProductId).HasColumnName("Product_id");
+
+                entity.Property(e => e.UserId).HasColumnName("User_id");
+
+                entity.HasOne(d => d.Order)
+                    .WithMany(p => p.Feedbacks)
+                    .HasForeignKey(d => d.OrderId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Feedback_Order");
+
+                entity.HasOne(d => d.Product)
+                    .WithMany(p => p.Feedbacks)
+                    .HasForeignKey(d => d.ProductId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Feedback_Product");
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.Feedbacks)
+                    .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Feedback_User");
+            });
+
             modelBuilder.Entity<Order>(entity =>
             {
                 entity.ToTable("Order");
@@ -99,7 +134,8 @@ namespace EShop.Data
 
                 entity.Property(e => e.CreatedDate)
                     .HasColumnType("datetime")
-                    .HasColumnName("Created_date");
+                    .HasColumnName("Created_date")
+                    .HasDefaultValueSql("(getdate())");
 
                 entity.Property(e => e.Email).HasMaxLength(50);
 
@@ -126,7 +162,6 @@ namespace EShop.Data
                 entity.HasOne(d => d.Order)
                     .WithMany(p => p.OrderItems)
                     .HasForeignKey(d => d.OrderId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Order_item_Order");
 
                 entity.HasOne(d => d.Product)

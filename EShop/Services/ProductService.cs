@@ -95,7 +95,7 @@ namespace EShop.Services
 
         public async Task Delete(int id)
         {
-            _productRepository.Delete(id);
+            await _productRepository.Delete(id);
         }
     }
 }
