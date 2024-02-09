@@ -1,4 +1,5 @@
 #E-Shop
+Demo: https://www.youtube.com/watch?v=OUD97xDoZ90
 Công nghệ sử dụng: ASP .NET, Entity Framework, SQL Server
 Chức năng chính: 
 -Người dùng:
